@@ -1,0 +1,27 @@
+<div class="selecao-idade">
+  <ul>
+    <li>{{ title }}</li>
+    <li>{{ obs }}</li>
+    <li>
+      <button
+        mat-mini-fab
+        class="decremento">
+        <img
+          src="../../../assets/icones/do_not_disturb_on.png"
+          alt="Subtraction Operator"
+        />
+      </button>
+      <span>
+        <ng-content></ng-content>
+      </span>
+      <button
+        mat-mini-fab
+        class="incremento">
+        <img
+          src="../../../assets/icones/add_circle.png"
+          alt="Addition Operator"
+        />
+      </button>
+    </li>
+  </ul>
+</div>
