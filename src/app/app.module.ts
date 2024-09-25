@@ -4,6 +4,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatInputModule } from '@angular/material/input';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 import { HeaderComponent } from './shared/header/header.component';
 import { BannerComponent } from './shared/banner/banner.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -14,6 +20,8 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { CardComponent } from './shared/card/card.component';
 import { CardBuscaComponent } from './shared/card-busca/card-busca.component';
 import { CardTestimonyComponent } from './shared/card-testimony/card-testimony.component';
+import { FormSearchComponent } from './shared/form-search/form-search.component';
+import { MatNativeDateModule } from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -25,7 +33,8 @@ import { CardTestimonyComponent } from './shared/card-testimony/card-testimony.c
     FooterComponent,
     CardComponent,
     CardBuscaComponent,
-    CardTestimonyComponent
+    CardTestimonyComponent,
+    FormSearchComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +42,14 @@ import { CardTestimonyComponent } from './shared/card-testimony/card-testimony.c
     BrowserAnimationsModule,
     MatToolbarModule,
     MatButtonModule,
-    MatCardModule
+    MatCardModule,
+    MatButtonToggleModule,
+    MatIconModule,
+    MatChipsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   providers: [],
   bootstrap: [AppComponent]
