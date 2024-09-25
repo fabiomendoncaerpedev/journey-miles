@@ -1,0 +1,101 @@
+<section class="modal">
+  <h1 mat-dialog-title>Viajante</h1>
+  <div mat-dialog-content>
+    <div class="selecao-idade">
+      <ul>
+        <li>Adultos</li>
+        <li>(Acima de 12 anos)</li>
+        <li>
+          <button
+            mat-mini-fab
+            class="decremento">
+            <img
+              src="../../../assets/icones/do_not_disturb_on.png"
+              alt="Subtraction Operator"
+            />
+          </button>
+          <span>1</span>
+          <button
+            mat-mini-fab
+            class="incremento">
+            <img
+              src="../../../assets/icones/add_circle.png"
+              alt="Addition Operator"
+            />
+          </button>
+        </li>
+      </ul>
+    </div>
+    <div class="selecao-idade">
+      <ul>
+        <li>Crianças</li>
+        <li>(Entre 2 e 11 anos)</li>
+        <li>
+          <button
+            mat-mini-fab
+            class="decremento">
+            <img
+              src="../../../assets/icones/do_not_disturb_on.png"
+              alt="Subtraction Operator"
+            />
+          </button>
+          <span>0</span>
+          <button
+            mat-mini-fab
+            class="incremento">
+            <img
+              src="../../../assets/icones/add_circle.png"
+              alt="Addition Operator"
+            />
+          </button>
+        </li>
+      </ul>
+    </div>
+    <div class="selecao-idade">
+      <ul>
+        <li>Bebês</li>
+        <li>(Até 2 anos)</li>
+        <li>
+          <button
+            mat-mini-fab
+            class="decremento">
+            <img
+              src="../../../assets/icones/do_not_disturb_on.png"
+              alt="Subtraction Operator"
+            />
+          </button>
+          <span>1</span>
+          <button
+            mat-mini-fab
+            class="incremento">
+            <img
+              src="../../../assets/icones/add_circle.png"
+              alt="Addition Operator"
+            />
+          </button>
+        </li>
+      </ul>
+    </div>
+    <div>
+      <mat-chip-listbox
+        aria-label="Air Ticket Selections">
+        <mat-chip-option selected>1 adulto
+        </mat-chip-option>
+        <mat-chip-option disabled>Econômica
+        </mat-chip-option>
+      </mat-chip-listbox>
+    </div>
+  </div>
+  <div mat-dialog-actions>
+    <button
+      mat-raised-button
+      mat-dialog-close
+      color="secondary">Cancelar
+    </button>
+    <button
+      mat-raised-button
+      mat-dialog-close
+      color="primary">Aplicar
+    </button>
+  </div>
+</section>

@@ -4,16 +4,23 @@
   <form>
     <h2>Passagens</h2>
     <div class="flex-container">
-      <mat-button-toggle-group aria-label="Type of Air Tickets">
+      <mat-button-toggle-group
+        aria-label="Type of Air Tickets">
         <mat-button-toggle>
           <mat-icon>check</mat-icon>IDA E VOLTA
         </mat-button-toggle>
         <mat-button-toggle>SOMENTE IDA
         </mat-button-toggle>
       </mat-button-toggle-group>
-      <mat-chip-listbox aria-label="Air Ticket Selections">
-        <mat-chip-option selected>1 adulto</mat-chip-option>
-        <mat-chip-option>Econômica</mat-chip-option>
+      <mat-chip-listbox
+        aria-label="Air Ticket Selections">
+        <mat-chip-option
+          selected
+          (click)="openDialog()">1 adulto
+        </mat-chip-option>
+        <mat-chip-option
+          (click)="openDialog()">Econômica
+        </mat-chip-option>
       </mat-chip-listbox>
     </div>
     <div class="flex-container">
