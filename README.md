@@ -2,8 +2,13 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.0
 If you are now with a newer version the Angular CLI and not want to do downgrade, use npx in your angular CLI installing, as below:
->cd .\life-cycle-angular\
+>cd .\journey-miles\
 >npx npm i @angular/cli@16.0.0
+
+# JourneyMiles (BACKEND)
+There is a backend project using Nest JS . You are able to serve this by typing the following commands:
+>cd .\journey-miles\jornada-milhas-api\
+>npx npm run start:dev
 
 # Project's Figma
 

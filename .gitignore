@@ -1,5 +1,15 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
+# Backend
+/jornada-milhas-api/node_modules
+/jornada-milhas-api/dist
+/jornada-milhas-api/tmp
+/jornada-milhas-api/out-tsc
+/jornada-milhas-api/bazel-out
+/jornada-milhas-api/node_modules
+/jornada-milhas-api/npm-debug.log
+/jornada-milhas-api/yarn-error.log
+
 # Compiled output
 /dist
 /tmp
