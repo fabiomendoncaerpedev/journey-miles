@@ -6,14 +6,10 @@
   <h2>Promoções</h2>
   <app-form-search></app-form-search>
   <div class="card-wrapper">
-    <app-card-busca></app-card-busca>
-    <app-card-busca></app-card-busca>
-    <app-card-busca></app-card-busca>
-    <app-card-busca></app-card-busca>
-    <app-card-busca></app-card-busca>
-    <app-card-busca></app-card-busca>
-    <app-card-busca></app-card-busca>
-    <app-card-busca></app-card-busca>
+    <app-card-search
+      *ngFor="let item of salesList$ | async"
+      [sale-info]="item">
+    </app-card-search>
   </div>
   <h2>Depoimentos</h2>
   <div class="card-wrapper">

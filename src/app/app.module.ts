@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
@@ -15,16 +16,17 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { HeaderComponent } from './shared/header/header.component';
 import { BannerComponent } from './shared/banner/banner.component';
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import { SaleService } from './core/services/sale.service';
 import { ContainerComponent } from './shared/container/container.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { CardComponent } from './shared/card/card.component';
-import { CardBuscaComponent } from './shared/card-busca/card-busca.component';
+import { CardSearchComponent } from './shared/card-busca/card-search.component';
 import { ModalComponent } from './shared/modal/modal.component';
 import { CardTestimonyComponent } from './shared/card-testimony/card-testimony.component';
 import { FormSearchComponent } from './shared/form-search/form-search.component';
 import { CounterComponent } from './shared/counter/counter.component';
 import { HomeComponent } from './pages/home/home.component';
+import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,7 @@ import { HomeComponent } from './pages/home/home.component';
     HomeComponent,
     FooterComponent,
     CardComponent,
-    CardBuscaComponent,
+    CardSearchComponent,
     CardTestimonyComponent,
     FormSearchComponent,
     ModalComponent,
@@ -55,9 +57,12 @@ import { HomeComponent } from './pages/home/home.component';
     MatInputModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatDialogModule
+    MatDialogModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    SaleService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
