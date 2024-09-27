@@ -8,6 +8,7 @@ If you are now with a newer version the Angular CLI and not want to do downgrade
 # JourneyMiles (BACKEND)
 There is a backend project using Nest JS . You are able to serve this by typing the following commands:
 >cd .\journey-miles\jornada-milhas-api\
+>npx npm i
 >npx npm run start:dev
 
 # Project's Figma
