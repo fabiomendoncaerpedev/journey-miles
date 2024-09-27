@@ -7,6 +7,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import  {MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatIconModule } from '@angular/material/icon';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatInputModule } from '@angular/material/input';
@@ -28,6 +29,7 @@ import { CounterComponent } from './shared/counter/counter.component';
 import { HomeComponent } from './pages/home/home.component';
 import { AppComponent } from './app.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { DropdownUfComponent } from './shared/form-search/dropdown-uf/dropdown-uf.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     CardTestimonyComponent,
     FormSearchComponent,
     ModalComponent,
-    CounterComponent
+    CounterComponent,
+    DropdownUfComponent
   ],
   imports: [
     BrowserModule,
@@ -60,7 +63,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatNativeDateModule,
     MatDialogModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatAutocompleteModule
   ],
   providers: [
     SaleService
