@@ -1,15 +1,17 @@
 <app-card
   variant="secondary"
   class="form-busca">
-  <form>
+  <form [formGroup]="formSearchService.formSearch">
     <h2>Passagens</h2>
     <div class="flex-container">
       <mat-button-toggle-group
-        aria-label="Type of Air Tickets">
-        <mat-button-toggle>
-          <mat-icon>check</mat-icon>IDA E VOLTA
+        aria-label="Type of Air Tickets"
+        formControlName="oneWayTicket">
+        <mat-button-toggle [value]="false">
+          <mat-icon *ngIf="!formSearchService.formSearch.get('oneWayTicket')?.value">check</mat-icon>IDA E VOLTA
         </mat-button-toggle>
-        <mat-button-toggle>SOMENTE IDA
+        <mat-button-toggle [value]="true">
+          <mat-icon *ngIf="formSearchService.formSearch.get('oneWayTicket')?.value">check</mat-icon>SOMENTE IDA
         </mat-button-toggle>
       </mat-button-toggle-group>
       <mat-chip-listbox

@@ -27,6 +27,7 @@ import { FormSearchComponent } from './shared/form-search/form-search.component'
 import { CounterComponent } from './shared/counter/counter.component';
 import { HomeComponent } from './pages/home/home.component';
 import { AppComponent } from './app.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -58,7 +59,8 @@ import { AppComponent } from './app.component';
     MatDatepickerModule,
     MatNativeDateModule,
     MatDialogModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [
     SaleService
