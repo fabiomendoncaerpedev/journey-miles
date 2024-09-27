@@ -20,7 +20,7 @@ import { SaleService } from './core/services/sale.service';
 import { ContainerComponent } from './shared/container/container.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { CardComponent } from './shared/card/card.component';
-import { CardSearchComponent } from './shared/card-busca/card-search.component';
+import { CardSearchComponent } from './shared/card-search/card-search.component';
 import { ModalComponent } from './shared/modal/modal.component';
 import { CardTestimonyComponent } from './shared/card-testimony/card-testimony.component';
 import { FormSearchComponent } from './shared/form-search/form-search.component';
