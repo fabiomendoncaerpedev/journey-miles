@@ -1,41 +1,43 @@
 <app-card
   variant="secondary"
   class="form-busca">
-  <form [formGroup]="formSearchService.formSearch">
+  <form [formGroup]="formSearchService.getFormSearch()">
     <h2>Passagens</h2>
     <div class="flex-container">
       <mat-button-toggle-group
         aria-label="Type of Air Tickets"
         formControlName="oneWayTicket">
         <mat-button-toggle [value]="false">
-          <mat-icon *ngIf="!formSearchService.formSearch.get('oneWayTicket')?.value">check</mat-icon>IDA E VOLTA
+          <mat-icon *ngIf="!formSearchService.getFormSearch().get('oneWayTicket')?.value">check</mat-icon>IDA E VOLTA
         </mat-button-toggle>
         <mat-button-toggle [value]="true">
-          <mat-icon *ngIf="formSearchService.formSearch.get('oneWayTicket')?.value">check</mat-icon>SOMENTE IDA
+          <mat-icon *ngIf="formSearchService.getFormSearch().get('oneWayTicket')?.value">check</mat-icon>SOMENTE IDA
         </mat-button-toggle>
       </mat-button-toggle-group>
-      <mat-chip-listbox
-        aria-label="Air Ticket Selections">
-        <mat-chip-option
-          selected
-          (click)="openDialog()">1 adulto
-        </mat-chip-option>
-        <mat-chip-option
-          (click)="openDialog()">Econômica
-        </mat-chip-option>
-      </mat-chip-listbox>
+      <mat-chip (click)="openDialog()">
+        <div class="inner">
+          <mat-icon>check</mat-icon> 1 adulto
+        </div>
+      </mat-chip>
+      <mat-chip (click)="openDialog()">
+        <div class="inner">
+          <mat-icon>check</mat-icon> Econômica
+        </div>
+      </mat-chip>
     </div>
     <div class="flex-container">
       <app-dropdown-uf
         label="Origem"
-        icon-prefix="flight_takeoff">
+        icon-prefix="flight_takeoff"
+        [control]="formSearchService.getControl('origin')">
       </app-dropdown-uf>
       <button mat-icon-button>
         <mat-icon>sync_alt</mat-icon>
       </button>
       <app-dropdown-uf
         label="Destino"
-        icon-prefix="flight_land">
+        icon-prefix="flight_land"
+        [control]="formSearchService.getControl('destiny')">
       </app-dropdown-uf>
       <mat-form-field
         appearance="outline"

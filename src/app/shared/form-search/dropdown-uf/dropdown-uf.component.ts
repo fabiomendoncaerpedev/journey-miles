@@ -1,5 +1,9 @@
-import { UfService } from './../../../core/services/uf.service';
 import { Component, Input, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
+import { Observable, map } from 'rxjs';
+import { FormSearchService } from './../../../core/services/form-search.service';
+import { UfService } from './../../../core/services/uf.service';
+import { UF } from 'src/app/core/types/uf';
 
 @Component({
   selector: 'app-dropdown-uf',
@@ -9,14 +13,20 @@ import { Component, Input, OnInit } from '@angular/core';
 export class DropdownUfComponent implements OnInit {
   @Input('label') label = '';
   @Input('icon-prefix') iconPrefix = '';
+  @Input('control') control!: FormControl;
 
-  filteredOptions = [];
+  filteredOptions$!: Observable<Array<UF>>;
+  ufList: Array<UF> = [];
 
   constructor(
-    private ufService: UfService
+    private ufService: UfService,
+    public formSearchService: FormSearchService
   ) { }
 
   ngOnInit(): void {
-    this.ufService.list()
+    this.ufService.list().subscribe((ufList) => this.ufList = ufList);
+    this.filteredOptions$ = this.control.valueChanges.pipe(
+      map((value) => this.ufList.filter(uf => uf.nome.toLowerCase().includes(value.toLowerCase())))
+    );
   }
 }
