@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Testimony } from 'src/app/core/types/testimony';
 
 @Component({
   selector: 'app-card-testimony',
@@ -6,10 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./card-testimony.component.scss']
 })
 export class CardTestimonyComponent {
-  testimony: string = `
-    Recomendo fortemente a agência de viagens Jornada.
-    Eles oferecem um serviço personalizado e de alta qualidade
-    que excedeu minhas expectativas em minha última viagem.
-  `
-  authorship: string = 'Mariana Faustino'
+  @Input('testimony') testimony!: Testimony;
 }
