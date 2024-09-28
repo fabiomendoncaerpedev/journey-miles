@@ -14,4 +14,14 @@ export class FormSearchComponent {
   find() {
     console.log('valores do FORM - value', this.formSearchService.getFormSearch().getRawValue());
   }
+
+  switchOriginDestiny() {
+    const origin = this.formSearchService.getControl('origin').value;
+    const destiny = this.formSearchService.getControl('destiny').value;
+
+    this.formSearchService.getFormSearch().patchValue({
+      origin: destiny,
+      destiny: origin
+    })
+  }
 }

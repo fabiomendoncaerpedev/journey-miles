@@ -18,12 +18,12 @@
       </mat-button-toggle-group>
       <mat-chip (click)="formSearchService.openDialog()">
         <div class="inner">
-          <mat-icon>check</mat-icon>{{ formSearchService.getPassengerDescriptions() }}
+          <mat-icon>{{ formSearchService.getPassengers() ? 'check': 'airline_seat_recline_normal' }}</mat-icon>{{ formSearchService.getPassengerDescriptions() }}
         </div>
       </mat-chip>
       <mat-chip (click)="formSearchService.openDialog()">
         <div class="inner">
-          <mat-icon>check</mat-icon> Econômica
+          <mat-icon>check</mat-icon>{{ formSearchService.getFormSearch().get('type')?.value }}
         </div>
       </mat-chip>
     </div>
@@ -33,7 +33,9 @@
         icon-prefix="flight_takeoff"
         [control]="formSearchService.getControl('origin')">
       </app-dropdown-uf>
-      <button mat-icon-button>
+      <button
+        (click)="switchOriginDestiny()"
+        mat-icon-button>
         <mat-icon>sync_alt</mat-icon>
       </button>
       <app-dropdown-uf

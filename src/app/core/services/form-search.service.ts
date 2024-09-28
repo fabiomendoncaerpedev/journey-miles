@@ -41,7 +41,13 @@ export class FormSearchService {
       description += total ? `${description ? ', ' : ''}${total} ${passenger[1]}${total > 1 ? 's' : ''}`: ''
     });
 
-    return description;
+    return description ? description : 'Ainda não foram selecionados passageiros';
+  }
+
+  getPassengers(): number {
+    return this.formSearch.get('adults')?.value
+      + this.formSearch.get('children')?.value
+      + this.formSearch.get('babies')?.value;
   }
 
   getFormSearch(): FormGroup {
