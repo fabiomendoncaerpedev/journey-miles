@@ -13,6 +13,7 @@ import { MatChipsModule } from '@angular/material/chips';
 import { MatInputModule } from '@angular/material/input';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatDialogModule } from '@angular/material/dialog';
+import { ReactiveFormsModule } from '@angular/forms';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { HeaderComponent } from './shared/header/header.component';
 import { BannerComponent } from './shared/banner/banner.component';
@@ -28,8 +29,8 @@ import { FormSearchComponent } from './shared/form-search/form-search.component'
 import { CounterComponent } from './shared/counter/counter.component';
 import { HomeComponent } from './pages/home/home.component';
 import { AppComponent } from './app.component';
-import { ReactiveFormsModule } from '@angular/forms';
 import { DropdownUfComponent } from './shared/form-search/dropdown-uf/dropdown-uf.component';
+import { LoginComponent } from './pages/login/login.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { DropdownUfComponent } from './shared/form-search/dropdown-uf/dropdown-u
     FormSearchComponent,
     ModalComponent,
     CounterComponent,
-    DropdownUfComponent
+    DropdownUfComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
