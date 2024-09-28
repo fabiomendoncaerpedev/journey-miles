@@ -13,26 +13,23 @@
       title="Bebês"
       obs="(Até 2 anos)">1
     </app-counter>
-    <div>
-      <mat-chip-listbox
-        aria-label="Air Ticket Selections">
-        <mat-chip-option selected>1 adulto
+    <div class="selecao-categoria">
+      <p><strong>Categoria</strong></p>
+      <mat-chip-listbox aria-label="Seleção de passagens">
+        <mat-chip-option
+          value="Econômica"
+          [selected]="formSearchService.getFormSearch().get('type')?.value === 'Econômica'"
+          (selectionChange)="formSearchService.alterType($event, 'Econômica')">Econômica
         </mat-chip-option>
-        <mat-chip-option disabled>Econômica
+        <mat-chip-option
+          value="Executiva"
+          [selected]="formSearchService.getFormSearch().get('type')?.value === 'Executiva'"
+          (selectionChange)="formSearchService.alterType($event, 'Executiva')">Executiva
         </mat-chip-option>
       </mat-chip-listbox>
     </div>
   </div>
-  <div mat-dialog-actions>
-    <button
-      mat-raised-button
-      mat-dialog-close
-      color="secondary">Cancelar
-    </button>
-    <button
-      mat-raised-button
-      mat-dialog-close
-      color="primary">Aplicar
-    </button>
+  <div mat-dialog-actions class="modal-actions">
+    <button color="primary" mat-flat-button mat-dialog-close>BUSCAR</button>
   </div>
 </section>

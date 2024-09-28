@@ -1,6 +1,6 @@
 <div class="selecao-idade">
   <ul>
-    <li>{{ title }}</li>
+    <li><strong>{{ title }}</strong></li>
     <li>{{ obs }}</li>
     <li>
       <button
@@ -12,7 +12,7 @@
         />
       </button>
       <span>
-        <ng-content></ng-content>
+        <span><ng-content></ng-content></span>
       </span>
       <button
         mat-mini-fab

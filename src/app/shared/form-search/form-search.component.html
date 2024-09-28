@@ -14,12 +14,12 @@
           <mat-icon *ngIf="formSearchService.getFormSearch().get('oneWayTicket')?.value">check</mat-icon>SOMENTE IDA
         </mat-button-toggle>
       </mat-button-toggle-group>
-      <mat-chip (click)="openDialog()">
+      <mat-chip (click)="formSearchService.openDialog()">
         <div class="inner">
-          <mat-icon>check</mat-icon> 1 adulto
+          <mat-icon>check</mat-icon>{{ formSearchService.getPassengerDescriptions() }}
         </div>
       </mat-chip>
-      <mat-chip (click)="openDialog()">
+      <mat-chip (click)="formSearchService.openDialog()">
         <div class="inner">
           <mat-icon>check</mat-icon> Econômica
         </div>
