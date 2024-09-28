@@ -1,27 +1,27 @@
-<div class="selecao-idade">
-  <ul>
-    <li><strong>{{ title }}</strong></li>
-    <li>{{ obs }}</li>
-    <li>
-      <button
-        mat-mini-fab
-        class="decremento">
-        <img
-          src="../../../assets/icones/do_not_disturb_on.png"
-          alt="Subtraction Operator"
-        />
-      </button>
-      <span>
-        <span><ng-content></ng-content></span>
-      </span>
-      <button
-        mat-mini-fab
-        class="incremento">
-        <img
-          src="../../../assets/icones/add_circle.png"
-          alt="Addition Operator"
-        />
-      </button>
-    </li>
-  </ul>
-</div>
+<ul>
+  <li><strong>{{ title }}</strong></li>
+  <li>{{ obs }}</li>
+  <li>
+    <button
+      mat-mini-fab
+      class="decremento"
+      (click)="decrease()">
+      <img
+        src="../../../assets/icones/do_not_disturb_on.png"
+        alt="Subtraction Operator"
+      />
+    </button>
+    <span>
+      <span>{{ control.value }}</span>
+    </span>
+    <button
+      mat-mini-fab
+      class="incremento"
+      (click)="increase()">
+      <img
+        src="../../../assets/icones/add_circle.png"
+        alt="Addition Operator"
+      />
+    </button>
+  </li>
+</ul>

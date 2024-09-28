@@ -1,7 +1,9 @@
 <app-card
   variant="secondary"
   class="form-busca">
-  <form [formGroup]="formSearchService.getFormSearch()">
+  <form
+    [formGroup]="formSearchService.getFormSearch()"
+    (ngSubmit)="find()">
     <h2>Passagens</h2>
     <div class="flex-container">
       <mat-button-toggle-group

@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-counter',
@@ -8,4 +9,9 @@ import { Component, Input } from '@angular/core';
 export class CounterComponent {
   @Input('title') title = '';
   @Input('obs') obs = '';
+  @Input('control') control!: FormControl;
+
+  increase() { this.control.setValue(this.control.value + 1) }
+  decrease() { this.control.setValue(this.control.value - 1) }
+
 }

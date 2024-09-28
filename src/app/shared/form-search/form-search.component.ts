@@ -10,4 +10,8 @@ export class FormSearchComponent {
   constructor(
     public formSearchService: FormSearchService,
   ) {}
+
+  find() {
+    console.log('valores do FORM - value', this.formSearchService.getFormSearch().getRawValue());
+  }
 }

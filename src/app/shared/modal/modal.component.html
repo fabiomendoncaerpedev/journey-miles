@@ -1,18 +1,23 @@
 <section class="modal">
   <h1 mat-dialog-title>Viajante</h1>
   <div mat-dialog-content>
-    <app-counter
-      title="Adultos"
-      obs="(Acima de 12 anos)">1
-    </app-counter>
-    <app-counter
-      title="Crianças"
-      obs="(Entre 2 e 11 anos)">0
-    </app-counter>
-    <app-counter
-      title="Bebês"
-      obs="(Até 2 anos)">1
-    </app-counter>
+    <div class="selecao-idade">
+      <app-counter
+        [control]="formSearchService.getControl('adults')"
+        title="Adultos"
+        obs="(Acima de 12 anos)">
+      </app-counter>
+      <app-counter
+        [control]="formSearchService.getControl('children')"
+        title="Crianças"
+        obs="(Entre 2 e 11 anos)">
+      </app-counter>
+      <app-counter
+        [control]="formSearchService.getControl('babies')"
+        title="Bebês"
+        obs="(Até 2 anos)">
+      </app-counter>
+    </div>
     <div class="selecao-categoria">
       <p><strong>Categoria</strong></p>
       <mat-chip-listbox aria-label="Seleção de passagens">
