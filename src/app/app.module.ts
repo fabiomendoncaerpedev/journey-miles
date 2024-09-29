@@ -32,7 +32,7 @@ import { FormSearchComponent } from './shared/form-search/form-search.component'
 import { CounterComponent } from './shared/counter/counter.component';
 import { HomeComponent } from './pages/home/home.component';
 import { AppComponent } from './app.component';
-import { DropdownUfComponent } from './shared/form-search/dropdown-uf/dropdown-uf.component';
+import { DropdownUfComponent } from './shared/dropdown-uf/dropdown-uf.component';
 import { LoginComponent } from './pages/login/login.component';
 import { FormBaseComponent } from './shared/form-base/form-base.component';
 

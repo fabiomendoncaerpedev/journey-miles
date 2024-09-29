@@ -1,8 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Observable, map } from 'rxjs';
-import { FormSearchService } from './../../../core/services/form-search.service';
-import { UfService } from './../../../core/services/uf.service';
+import { FormSearchService } from '../../core/services/form-search.service';
+import { UfService } from '../../core/services/uf.service';
 import { UF } from 'src/app/core/types/uf';
 
 @Component({
@@ -13,6 +13,7 @@ import { UF } from 'src/app/core/types/uf';
 export class DropdownUfComponent implements OnInit {
   @Input('label') label = '';
   @Input('icon-prefix') iconPrefix = '';
+  @Input('placeholder') placeholder = '';
   @Input('control') control!: FormControl;
 
   filteredOptions$!: Observable<Array<UF>>;

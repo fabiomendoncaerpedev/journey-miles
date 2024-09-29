@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { DropdownUfComponent } from './dropdown-uf.component';
 
 describe('DropdownUfComponent', () => {
