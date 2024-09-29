@@ -2,7 +2,10 @@
   appearance="outline"
   class="input-container">
   <mat-label>{{ label }}</mat-label>
-  <mat-icon matPrefix>{{ iconPrefix }}</mat-icon>
+  <mat-icon
+    matPrefix
+    *ngIf="iconPrefix">{{ iconPrefix }}
+  </mat-icon>
   <input
     matInput
     [matAutocomplete]="auto"
