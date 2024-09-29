@@ -35,6 +35,7 @@ import { AppComponent } from './app.component';
 import { DropdownUfComponent } from './shared/dropdown-uf/dropdown-uf.component';
 import { LoginComponent } from './pages/login/login.component';
 import { FormBaseComponent } from './shared/form-base/form-base.component';
+import { RegisterComponent } from './pages/register/register.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { FormBaseComponent } from './shared/form-base/form-base.component';
     CounterComponent,
     DropdownUfComponent,
     LoginComponent,
-    FormBaseComponent
+    FormBaseComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

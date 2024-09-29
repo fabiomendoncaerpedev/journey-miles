@@ -3,7 +3,9 @@
     <form [formGroup]="formBase">
       <mat-card-title>Crie sua conta</mat-card-title>
       <section>
-        <div class="acoesPerfil">
+        <div
+          *ngIf="isPerfilComponent"
+          class="acoesPerfil">
           <h2>Dados pessoais</h2>
           <button
             mat-stroked-button
@@ -71,8 +73,10 @@
           </div>
         </div>
       </mat-card-content>
-      <mat-divider></mat-divider>
-      <div class="acessoPerfil">
+      <mat-divider *ngIf="isPerfilComponent"></mat-divider>
+      <div
+        *ngIf="isPerfilComponent"
+        class="acessoPerfil">
         <h2>Dados de acesso</h2>
       </div>
       <mat-card-content>
@@ -127,7 +131,8 @@
       <mat-card-actions class="full-width">
         <button mat-flat-button
           [disabled]="formBase.invalid"
-          color="primary">CADASTRAR
+          color="primary"
+          (click)="executeAction()">CADASTRAR
         </button>
       </mat-card-actions>
     </form>

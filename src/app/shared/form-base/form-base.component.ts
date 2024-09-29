@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { UF } from 'src/app/core/types/uf';
 
@@ -8,6 +8,9 @@ import { UF } from 'src/app/core/types/uf';
   styleUrls: ['./form-base.component.scss']
 })
 export class FormBaseComponent implements OnInit {
+  @Input('is-perfil-component') isPerfilComponent!: boolean;
+  @Output('click-action') clickAction: EventEmitter<any> = new EventEmitter();
+
   formBase!: FormGroup;
   stateControl = new FormControl<UF | null>(null, Validators.required);
 
@@ -30,5 +33,9 @@ export class FormBaseComponent implements OnInit {
       confirmPassword: [null, [Validators.required, Validators.minLength(3)]],
       acceptTerms: [null, [Validators.requiredTrue]]
     });
+  }
+
+  executeAction() {
+    this.clickAction.emit(this.formBase.getRawValue());
   }
 }
