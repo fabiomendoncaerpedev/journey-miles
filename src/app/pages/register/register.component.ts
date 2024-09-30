@@ -1,3 +1,4 @@
+import { FormService } from './../../core/services/form.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,7 +7,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent {
+
+  constructor(
+    private formService: FormService
+  ) {}
+
   register() {
-    console.log('register successfuly')
+    const registerForm = this.formService.getForm();
+
+    console.log('register successufuly', registerForm);
   }
 }
