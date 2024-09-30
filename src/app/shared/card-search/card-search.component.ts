@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Sale } from 'src/app/core/types/sale';
+import { Sale } from 'src/app/core/types/types';
 
 @Component({
   selector: 'app-card-search',

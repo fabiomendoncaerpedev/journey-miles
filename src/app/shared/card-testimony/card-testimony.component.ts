@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Testimony } from 'src/app/core/types/testimony';
+import { Testimony } from 'src/app/core/types/types';
 
 @Component({
   selector: 'app-card-testimony',

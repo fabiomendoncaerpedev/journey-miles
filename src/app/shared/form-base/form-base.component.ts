@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
-import { UF } from 'src/app/core/types/uf';
+import { UF } from 'src/app/core/types/types';
 import { FormService } from './../../core/services/form.service';
 
 @Component({

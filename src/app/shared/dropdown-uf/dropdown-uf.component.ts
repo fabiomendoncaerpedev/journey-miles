@@ -1,9 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Observable, map } from 'rxjs';
+import { UF } from 'src/app/core/types/types';
 import { FormSearchService } from '../../core/services/form-search.service';
 import { UfService } from '../../core/services/uf.service';
-import { UF } from 'src/app/core/types/uf';
 
 @Component({
   selector: 'app-dropdown-uf',

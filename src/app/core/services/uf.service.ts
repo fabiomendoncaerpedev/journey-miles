@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
-import { UF } from '../types/uf';
+import { UF } from '../types/types';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
