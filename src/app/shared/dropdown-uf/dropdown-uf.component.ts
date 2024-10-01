@@ -27,7 +27,15 @@ export class DropdownUfComponent implements OnInit {
   ngOnInit(): void {
     this.ufService.list().subscribe((ufList) => this.ufList = ufList);
     this.filteredOptions$ = this.control.valueChanges.pipe(
-      map((value) => this.ufList.filter(uf => uf.nome.toLowerCase().includes(value.toLowerCase())))
+      map((value) => {
+        const rightValue = typeof value === 'string' ? value : value?.nome;
+
+        return this.ufList.filter(uf => uf.nome.toLowerCase().includes(rightValue.toLowerCase()))
+      })
     );
+  }
+
+  displayFn(uf: UF): string {
+    return uf && uf.nome ? uf.nome : '';
   }
 }

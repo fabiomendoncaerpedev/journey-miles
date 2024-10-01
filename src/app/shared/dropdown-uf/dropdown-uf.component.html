@@ -13,8 +13,12 @@
     [placeholder]="placeholder"
   />
   <mat-icon matSuffix>search</mat-icon>
-  <mat-autocomplete #auto="matAutocomplete">
-    <mat-option *ngFor="let uf of filteredOptions$ | async" [value]="uf.nome">
+  <mat-autocomplete
+    #auto="matAutocomplete"
+    [displayWith]="displayFn">
+    <mat-option
+      *ngFor="let uf of filteredOptions$ | async"
+      [value]="uf">
       {{ uf.nome }}
     </mat-option>
   </mat-autocomplete>
