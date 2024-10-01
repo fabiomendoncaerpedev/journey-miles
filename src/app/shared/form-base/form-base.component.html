@@ -106,6 +106,7 @@
               <input matInput formControlName="confirmEmail" placeholder="Digite seu e-mail novamente">
               <mat-error *ngIf="formBase.get('confirmEmail')?.errors?.['required']">Confirmação de E-mail é obrigatória</mat-error>
               <mat-error *ngIf="formBase.get('confirmEmail')?.errors?.['email']">E-mail inválido</mat-error>
+              <mat-error *ngIf="formBase.get('confirmEmail')?.errors?.['equalTo']">E-mail's não coincidem</mat-error>
             </mat-form-field>
             <mat-form-field appearance="outline">
               <mat-label>Confirmar Senha</mat-label>
@@ -116,6 +117,7 @@
                 placeholder="Repita sua senha"
               />
               <mat-error *ngIf="formBase.get('confirmPassword')?.errors?.['required']">Confirmação de Senha é obrigatória</mat-error>
+              <mat-error *ngIf="formBase.get('confirmPassword')?.errors?.['equalTo']">Senhas não coincidem</mat-error>
             </mat-form-field>
           </div>
         </div>
