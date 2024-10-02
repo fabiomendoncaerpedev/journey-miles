@@ -29,3 +29,7 @@ export interface User {
   cidade: string,
   estado: UF
 }
+
+export interface AuthResponse {
+  access_token: string
+}

@@ -6,7 +6,7 @@ export class FormValidations {
       const fieldValue = control.value;
       const otherFieldValue = control.root.get(otherField)?.value;
 
-      return fieldValue != otherField
+      return fieldValue != otherFieldValue
         ? { equalTo: true }
         : null
     }

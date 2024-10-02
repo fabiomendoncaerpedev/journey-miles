@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component } from '@angular/core';
 import { User } from 'src/app/core/types/types';
 import { UserService } from 'src/app/core/services/user.service';
@@ -10,7 +11,7 @@ import { UserService } from 'src/app/core/services/user.service';
 export class RegisterComponent {
 
   constructor(
-
+    private router: Router,
     private userService: UserService
   ) {}
 
@@ -28,7 +29,11 @@ export class RegisterComponent {
     };
 
     this.userService.register(newUserData).subscribe({
-      next: (response) => console.log(response)
+      next: (response) => {
+        console.log('registered successfuly');
+
+        this.router.navigate(['/login']);
+      }
     })
   }
 }
