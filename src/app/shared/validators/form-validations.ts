@@ -11,4 +11,14 @@ export class FormValidations {
         : null
     }
   }
+
+  static required(isPerfilComponent: boolean): ValidatorFn {
+    return (control: AbstractControl): ValidationErrors | null => {
+      const fieldValue = control.value;
+
+      return !isPerfilComponent && !fieldValue
+        ? { required: true }
+        : null
+    }
+  }
 }
