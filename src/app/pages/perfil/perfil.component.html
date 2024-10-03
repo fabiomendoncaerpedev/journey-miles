@@ -1,0 +1,11 @@
+<app-banner
+  src="../../../assets/imagens/banner-perfil.png"
+  alt="Perfil Screen Banner">
+</app-banner>
+<app-form-base
+  buttonText="ATUALIZAR"
+  title="Olá, {{ name }}!"
+  [is-perfil-component]="true"
+  (logout)="logout()"
+  (click-action)="updateInfoUser()">
+</app-form-base>
