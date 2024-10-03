@@ -10,8 +10,11 @@ import { FormValidations } from '../validators/form-validations';
   styleUrls: ['./form-base.component.scss']
 })
 export class FormBaseComponent implements OnInit {
-  @Input('is-perfil-component') isPerfilComponent!: boolean;
+  @Input('is-perfil-component') isPerfilComponent: boolean = false;
+  @Input('title') title: string = 'Crie sua Conta';
+  @Input('buttonText') buttonText = 'CADASTRAR';
   @Output('click-action') clickAction: EventEmitter<any> = new EventEmitter();
+  @Output('logout') logout: EventEmitter<any> = new EventEmitter();
 
   formBase!: FormGroup;
   stateControl = new FormControl<UF | null>(null, Validators.required);
@@ -34,7 +37,7 @@ export class FormBaseComponent implements OnInit {
       confirmEmail: [null, [Validators.required, Validators.email, FormValidations.equalTo('email')]],
       password: [null, [Validators.required, Validators.minLength(3)]],
       confirmPassword: [null, [Validators.required, Validators.minLength(3), FormValidations.equalTo('password')]],
-      acceptTerms: [null, [Validators.requiredTrue]]
+      acceptTerms: [null, [FormValidations.required(this.isPerfilComponent)]]
     });
 
     this.formService.setForm(this.formBase);
@@ -42,5 +45,9 @@ export class FormBaseComponent implements OnInit {
 
   executeAction() {
     this.clickAction.emit(this.formBase.getRawValue());
+  }
+
+  emitLogout() {
+    this.logout.emit();
   }
 }

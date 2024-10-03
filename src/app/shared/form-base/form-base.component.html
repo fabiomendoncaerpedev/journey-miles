@@ -1,7 +1,7 @@
 <app-container>
   <mat-card>
     <form [formGroup]="formBase">
-      <mat-card-title>Crie sua conta</mat-card-title>
+      <mat-card-title>{{ title }}</mat-card-title>
       <section>
         <div
           *ngIf="isPerfilComponent"
@@ -9,7 +9,8 @@
           <h2>Dados pessoais</h2>
           <button
             mat-stroked-button
-            color="primary">
+            color="primary"
+            (click)="emitLogout()">
             <mat-icon>logout</mat-icon>
             DESLOGAR
           </button>
@@ -122,6 +123,7 @@
           </div>
         </div>
         <mat-checkbox
+          *ngIf="!isPerfilComponent"
           formControlName="acceptTerms"
           color="primary"
           class="full-width">Li e aceito os termos e condições deste cadastro *
@@ -131,10 +133,12 @@
         </mat-error>
       </mat-card-content>
       <mat-card-actions class="full-width">
-        <button mat-flat-button
+        <button
+          [class.perfil-button]="isPerfilComponent"
+          mat-flat-button
           [disabled]="formBase.invalid"
           color="primary"
-          (click)="executeAction()">CADASTRAR
+          (click)="executeAction()">{{ buttonText }}
         </button>
       </mat-card-actions>
     </form>

@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
@@ -22,9 +22,24 @@ export class UserService {
       this.decodeJWT();
   }
 
-
   register(userData: User): Observable<User> {
     return this.http.post<User>(`${this.API}/auth/cadastro`, userData);
+  }
+
+  findRegister(token: string): Observable<User> {
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token}`
+    })
+
+    return this.http.get<User>(`${this.API}/auth/perfil`, { headers });
+  }
+
+  editRegister(userData: User, token: string): Observable<User> {
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token}`
+    })
+
+    return this.http.patch<User>(`${this.API}/auth/perfil`, userData, { headers });
   }
 
   decodeJWT() {
