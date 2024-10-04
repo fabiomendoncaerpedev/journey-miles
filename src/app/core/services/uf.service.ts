@@ -5,9 +5,7 @@ import { map, shareReplay } from 'rxjs/operators';
 import { UF } from '../types/types';
 import { environment } from 'src/environments/environment';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class UfService {
 
   private API: string = environment.urlUF;

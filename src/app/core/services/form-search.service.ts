@@ -5,9 +5,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { UfService } from './uf.service';
 import { ModalComponent } from 'src/app/shared/modal/modal.component';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class FormSearchService {
 
   private formSearch: FormGroup;

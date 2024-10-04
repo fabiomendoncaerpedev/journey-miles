@@ -4,9 +4,7 @@ import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Testimony } from '../types/types';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class TestimonyService {
 
   private API = environment.apiURL;

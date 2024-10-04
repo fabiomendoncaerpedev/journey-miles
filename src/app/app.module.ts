@@ -38,6 +38,12 @@ import { FormBaseComponent } from './shared/form-base/form-base.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { PerfilComponent } from './pages/perfil/perfil.component';
 import { AuthenticationInterceptor } from './core/interceptors/authentication.interceptor';
+import { AuthenticationService } from './core/services/authentication.service';
+import { FormSearchService } from './core/services/form-search.service';
+import { FormService } from './core/services/form.service';
+import { TestimonyService } from './core/services/testimony.service';
+import { TokenService } from './core/services/token.service';
+import { UfService } from './core/services/uf.service';
 
 @NgModule({
   declarations: [
@@ -83,6 +89,12 @@ import { AuthenticationInterceptor } from './core/interceptors/authentication.in
   ],
   providers: [
     SaleService,
+    AuthenticationService,
+    FormSearchService,
+    FormService,
+    TestimonyService,
+    TokenService,
+    UfService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthenticationInterceptor,

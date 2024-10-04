@@ -5,9 +5,7 @@ import { environment } from 'src/environments/environment';
 import { AuthResponse } from '../types/types';
 import { UserService } from 'src/app/core/services/user.service';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class AuthenticationService {
 
   private API = environment.apiURL;
