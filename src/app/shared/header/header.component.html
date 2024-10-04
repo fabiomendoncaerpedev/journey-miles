@@ -5,16 +5,34 @@
       alt="Journey App Logo"
     />
     <span class="spacer"></span>
-    <button mat-button>Vender Milhas</button>
-    <button mat-button>Sobre</button>
-    <button
-      mat-raised-button
-      color="primary"
-      routerLink="/register">CADASTRE-SE
-    </button>
-    <button
-      mat-stroked-button
-      routerLink="/login">LOGIN
-    </button>
+    <div class="links-toolbar">
+      <button mat-button>Vender Milhas</button>
+      <button mat-button>Sobre</button>
+      <ng-container
+        *ngIf="user$ | async as userInfo, else login">
+        <a routerLink="/perfil">
+          <mat-icon
+            aria-hidden="false"
+            aria-label="User Icon"
+            fontIcon="account_circle">
+          </mat-icon>
+        </a>
+        <button
+          mat-stroked-button
+          (click)="logout()">SAIR
+        </button>
+      </ng-container>
+      <ng-template #login>
+        <button
+          mat-raised-button
+          color="primary"
+          routerLink="/register">CADASTRE-SE
+        </button>
+        <button
+          mat-stroked-button
+          routerLink="/login">LOGIN
+        </button>
+      </ng-template>
+    </div>
   </mat-toolbar>
 </header>
