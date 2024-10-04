@@ -4,7 +4,9 @@
 </app-banner>
 <app-container>
   <h2>Promoções</h2>
-  <app-form-search></app-form-search>
+  <app-form-search
+    (do-search)="navigateToSearch($event)">
+  </app-form-search>
   <div class="card-wrapper">
     <app-card-search
       *ngFor="let sale of salesList$ | async"

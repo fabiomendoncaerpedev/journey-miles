@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { SaleService } from './../../core/services/sale.service';
@@ -16,7 +17,8 @@ export class HomeComponent implements OnInit {
 
   constructor(
     private saleService: SaleService,
-    private testimonyService: TestimonyService
+    private testimonyService: TestimonyService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -24,4 +26,8 @@ export class HomeComponent implements OnInit {
     this.testimonyList$ = this.testimonyService.list();
   }
 
+
+  navigateToSearch(event: any) {
+    this.router.navigate(['/search'])
+  }
 }

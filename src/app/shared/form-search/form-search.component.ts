@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { FormSearchService } from './../../core/services/form-search.service';
 
 @Component({
@@ -7,12 +7,16 @@ import { FormSearchService } from './../../core/services/form-search.service';
   styleUrls: ['./form-search.component.scss']
 })
 export class FormSearchComponent {
+  @Output('do-search') doSearch: EventEmitter<any> = new EventEmitter();
+
   constructor(
     public formSearchService: FormSearchService,
   ) {}
 
   find() {
-    console.log('valores do FORM - value', this.formSearchService.getFormSearch().getRawValue());
+    const formSearchValue = this.formSearchService.getFormSearch().value;
+
+    this.doSearch.emit(formSearchValue);
   }
 
   switchOriginDestiny() {

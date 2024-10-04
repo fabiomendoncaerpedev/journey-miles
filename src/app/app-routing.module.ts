@@ -5,6 +5,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { PerfilComponent } from './pages/perfil/perfil.component';
 import { authGuard } from './core/guards/auth.guard';
+import { SearchComponent } from './pages/search/search.component';
 
 const routes: Routes = [
   {
@@ -23,6 +24,10 @@ const routes: Routes = [
     path: 'perfil',
     component: PerfilComponent,
     canActivate: [authGuard]
+  },
+  {
+    path: 'search',
+    component: SearchComponent
   }
 ];
 
