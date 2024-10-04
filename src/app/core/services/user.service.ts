@@ -26,20 +26,12 @@ export class UserService {
     return this.http.post<User>(`${this.API}/auth/cadastro`, userData);
   }
 
-  findRegister(token: string): Observable<User> {
-    const headers = new HttpHeaders({
-      'Authorization': `Bearer ${token}`
-    })
-
-    return this.http.get<User>(`${this.API}/auth/perfil`, { headers });
+  findRegister(): Observable<User> {
+    return this.http.get<User>(`${this.API}/auth/perfil`);
   }
 
-  editRegister(userData: User, token: string): Observable<User> {
-    const headers = new HttpHeaders({
-      'Authorization': `Bearer ${token}`
-    })
-
-    return this.http.patch<User>(`${this.API}/auth/perfil`, userData, { headers });
+  editRegister(userData: User): Observable<User> {
+    return this.http.patch<User>(`${this.API}/auth/perfil`, userData);
   }
 
   decodeJWT() {

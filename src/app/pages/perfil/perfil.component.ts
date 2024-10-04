@@ -4,7 +4,6 @@ import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/core/types/types';
 import { FormService } from './../../core/services/form.service';
 import { UserService } from 'src/app/core/services/user.service';
-import { TokenService } from './../../core/services/token.service';
 
 @Component({
   selector: 'app-perfil',
@@ -12,21 +11,18 @@ import { TokenService } from './../../core/services/token.service';
   styleUrls: ['./perfil.component.scss']
 })
 export class PerfilComponent implements OnInit {
-  token = '';
   name = '';
   user!: User;
   form!: FormGroup<any> | null;
 
   constructor(
-    private tokenService: TokenService,
     private userService: UserService,
     private formService: FormService,
     private router: Router
   ) {}
 
   ngOnInit(): void {
-    this.token = this.tokenService.getToken();
-    this.userService.findRegister(this.token).subscribe({
+    this.userService.findRegister().subscribe({
       next: (response) => {
         this.user = response;
         this.name = response.nome;
@@ -49,7 +45,7 @@ export class PerfilComponent implements OnInit {
       senha: this.form?.value.password
     }
 
-    this.userService.editRegister(updatedData, this.token).subscribe({
+    this.userService.editRegister(updatedData).subscribe({
       next: (response) => {
         alert('updated successfuly')
         this.router.navigate(['/'])
