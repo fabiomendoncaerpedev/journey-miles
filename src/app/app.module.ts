@@ -44,6 +44,7 @@ import { FormService } from './core/services/form.service';
 import { TestimonyService } from './core/services/testimony.service';
 import { TokenService } from './core/services/token.service';
 import { UfService } from './core/services/uf.service';
+import { SearchComponent } from './pages/search/search.component';
 
 @NgModule({
   declarations: [
@@ -63,7 +64,8 @@ import { UfService } from './core/services/uf.service';
     LoginComponent,
     FormBaseComponent,
     RegisterComponent,
-    PerfilComponent
+    PerfilComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
