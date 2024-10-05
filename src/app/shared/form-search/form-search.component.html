@@ -55,6 +55,7 @@
           matInput
           [matDatepicker]="pickerDeparture"
           placeholder="Selecione"
+          formControlName="departureDate"
         />
         <mat-datepicker-toggle matIconSuffix [for]="pickerDeparture"></mat-datepicker-toggle>
         <mat-datepicker #pickerDeparture></mat-datepicker>
@@ -67,6 +68,7 @@
           matInput
           [matDatepicker]="pickerArrival"
           placeholder="Selecione"
+          formControlName="arrivalDate"
         />
         <mat-datepicker-toggle matIconSuffix [for]="pickerArrival"></mat-datepicker-toggle>
         <mat-datepicker #pickerArrival></mat-datepicker>

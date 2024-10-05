@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatChipSelectionChange } from '@angular/material/chips';
 import { MatDialog } from '@angular/material/dialog';
 import { UfService } from './uf.service';
@@ -14,15 +14,32 @@ export class FormSearchService {
     private dialog: MatDialog,
     public ufService: UfService
   ) {
+    const oneWayTicket = new FormControl(false, [Validators.required]);
+    const arrivalDate = new FormControl(null, [Validators.required]);
+
     this.formSearch = new FormGroup({
-      oneWayTicket: new FormControl(false),
-      origin: new FormControl(),
-      destiny: new FormControl(),
+      oneWayTicket,
+      origin: new FormControl(null, [Validators.required]),
+      destiny: new FormControl(null, [Validators.required]),
       type: new FormControl('Econômica'),
       adults: new FormControl(0),
       children: new FormControl(0),
-      babies: new FormControl(0)
+      babies: new FormControl(0),
+      arrivalDate,
+      departureDate: new FormControl(null, [Validators.required]),
     })
+
+    oneWayTicket.valueChanges.subscribe((oneWayTicket) => {
+      if (oneWayTicket) {
+        arrivalDate.disable();
+        arrivalDate.setValidators(null);
+      } else {
+        arrivalDate.enable();
+        arrivalDate.setValidators([Validators.required])
+      }
+
+      arrivalDate.updateValueAndValidity();
+    });
   }
 
   getPassengerDescriptions(): string {
@@ -72,5 +89,9 @@ export class FormSearchService {
       this.formSearch.patchValue({ type });
       console.log('ticket type ->', type)
     }
+  }
+
+  formIsValid(): boolean {
+    return this.formSearch.valid;
   }
 }

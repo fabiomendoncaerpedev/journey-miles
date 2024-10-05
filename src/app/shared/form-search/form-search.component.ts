@@ -14,9 +14,12 @@ export class FormSearchComponent {
   ) {}
 
   find() {
-    const formSearchValue = this.formSearchService.getFormSearch().value;
-
-    this.doSearch.emit(formSearchValue);
+    if (this.formSearchService.formIsValid()) {
+      const formSearchValue = this.formSearchService.getFormSearch().value;
+      this.doSearch.emit(formSearchValue);
+    } else {
+      alert('form must be filled in')
+    }
   }
 
   switchOriginDestiny() {
