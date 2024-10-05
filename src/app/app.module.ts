@@ -46,6 +46,7 @@ import { TokenService } from './core/services/token.service';
 import { UfService } from './core/services/uf.service';
 import { SearchComponent } from './pages/search/search.component';
 import { TicketsService } from './core/services/tickets.service';
+import { TicketComponent } from './shared/ticket/ticket.component';
 
 @NgModule({
   declarations: [
@@ -66,7 +67,8 @@ import { TicketsService } from './core/services/tickets.service';
     FormBaseComponent,
     RegisterComponent,
     PerfilComponent,
-    SearchComponent
+    SearchComponent,
+    TicketComponent
   ],
   imports: [
     BrowserModule,
