@@ -45,6 +45,7 @@ import { TestimonyService } from './core/services/testimony.service';
 import { TokenService } from './core/services/token.service';
 import { UfService } from './core/services/uf.service';
 import { SearchComponent } from './pages/search/search.component';
+import { TicketsService } from './core/services/tickets.service';
 
 @NgModule({
   declarations: [
@@ -97,6 +98,7 @@ import { SearchComponent } from './pages/search/search.component';
     TestimonyService,
     TokenService,
     UfService,
+    TicketsService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthenticationInterceptor,
