@@ -4,6 +4,7 @@ import { MatChipSelectionChange } from '@angular/material/chips';
 import { MatDialog } from '@angular/material/dialog';
 import { UfService } from './uf.service';
 import { ModalComponent } from 'src/app/shared/modal/modal.component';
+import { SearchData } from '../types/types';
 
 @Injectable()
 export class FormSearchService {
@@ -69,13 +70,37 @@ export class FormSearchService {
     return this.formSearch;
   }
 
-  getControl(controlName: string): FormControl {
+  getControl<T>(controlName: string): FormControl {
     const control = this.formSearch.get(controlName);
 
     if (!control)
       throw new Error(`FormControl called ${controlName} was not found`);
 
-    return control as FormControl;
+    return control as FormControl<T>;
+  }
+
+  getSearchData(): SearchData {
+    const departureDateControl = this.getControl<Date>('departureDate');
+
+    const searchData: SearchData = {
+      pagina: 1,
+      porPagina: 50,
+      somenteIda: this.getControl<boolean>('oneWayTicket').value,
+      origemId: this.getControl<boolean>('origin').value.id,
+      destinoId: this.getControl<boolean>('destiny').value.id,
+      tipo: this.getControl<boolean>('type').value,
+      passageirosAdultos: this.getControl<boolean>('adults').value,
+      passageirosCriancas: this.getControl<boolean>('children').value,
+      passageirosBebes: this.getControl<boolean>('babies').value,
+      dataIda: departureDateControl.value.toISOString()
+    };
+
+    const arrivalDateControl = this.getControl<Date>('arrivalDate');
+
+    if (arrivalDateControl.value)
+      searchData.dataVolta = arrivalDateControl.value.toString();
+
+    return searchData;
   }
 
   openDialog() {

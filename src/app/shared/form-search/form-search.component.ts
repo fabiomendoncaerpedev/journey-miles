@@ -15,7 +15,7 @@ export class FormSearchComponent {
 
   find() {
     if (this.formSearchService.formIsValid()) {
-      const formSearchValue = this.formSearchService.getFormSearch().value;
+      const formSearchValue = this.formSearchService.getSearchData();
       this.doSearch.emit(formSearchValue);
     } else {
       alert('form must be filled in')

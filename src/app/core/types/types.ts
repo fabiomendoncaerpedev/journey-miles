@@ -70,3 +70,22 @@ export interface Budget {
   taxaEmbarque: number;
   total: number
 }
+
+export interface SearchData {
+  somenteIda?: boolean;
+  passageirosAdultos?: number;
+  passageirosCriancas?: number;
+  passageirosBebes?: number;
+  tipo?: string;
+  origemId?: number;
+  destinoId?: number;
+  precoMin?: number;
+  precoMax?: number;
+  conexoes?: number;
+  tempoVoo?: number;
+  dataIda: string;
+  dataVolta?: string;
+  companhiasId?: Array<number>;
+  pagina: number;
+  porPagina: number;
+}

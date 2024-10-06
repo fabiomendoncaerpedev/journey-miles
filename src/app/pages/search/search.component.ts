@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Ticket } from 'src/app/core/types/types';
+import { SearchData, Ticket } from 'src/app/core/types/types';
+import { FormSearchService } from './../../core/services/form-search.service';
 import { TicketsService } from './../../core/services/tickets.service';
 
 @Component({
@@ -11,7 +12,8 @@ export class SearchComponent implements OnInit{
   tickets: Array<Ticket> = [];
 
   constructor(
-    private ticketsService: TicketsService
+    private ticketsService: TicketsService,
+    private formSearchService: FormSearchService
   ) {}
 
   ngOnInit(): void {
@@ -24,7 +26,19 @@ export class SearchComponent implements OnInit{
       tipo: 'Executiva'
     };
 
-    this.ticketsService.getTickets(defaultSearch).subscribe({
+    const search = this.formSearchService.formIsValid()
+      ? this.formSearchService.getSearchData()
+      : defaultSearch;
+
+    this.ticketsService.getTickets(search).subscribe({
+      next: (response) => {
+        this.tickets = response.resultado;
+      }
+    })
+  }
+
+  find(event: SearchData) {
+    this.ticketsService.getTickets(event).subscribe({
       next: (response) => {
         this.tickets = response.resultado;
       }
