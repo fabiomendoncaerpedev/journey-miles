@@ -1,9 +1,11 @@
+import { ComplementaryFiltersComponent } from './shared/form-search/complementary-filters/complementary-filters.component';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
+import { MatSliderModule } from '@angular/material/slider';
 import { MatButtonModule } from '@angular/material/button';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -47,6 +49,10 @@ import { UfService } from './core/services/uf.service';
 import { SearchComponent } from './pages/search/search.component';
 import { TicketsService } from './core/services/tickets.service';
 import { TicketComponent } from './shared/ticket/ticket.component';
+import { CompaniesComponent } from './shared/form-search/complementary-filters/companies/companies.component';
+import { LabelComponent } from './shared/form-search/complementary-filters/label/label.component';
+import { PricesComponent } from './shared/form-search/complementary-filters/prices/prices.component';
+import { StopsComponent } from './shared/form-search/complementary-filters/stops/stops.component';
 
 @NgModule({
   declarations: [
@@ -68,7 +74,12 @@ import { TicketComponent } from './shared/ticket/ticket.component';
     RegisterComponent,
     PerfilComponent,
     SearchComponent,
-    TicketComponent
+    TicketComponent,
+    CompaniesComponent,
+    LabelComponent,
+    PricesComponent,
+    StopsComponent,
+    ComplementaryFiltersComponent
   ],
   imports: [
     BrowserModule,
@@ -90,7 +101,8 @@ import { TicketComponent } from './shared/ticket/ticket.component';
     MatAutocompleteModule,
     MatRadioModule,
     MatDividerModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatSliderModule
   ],
   providers: [
     SaleService,

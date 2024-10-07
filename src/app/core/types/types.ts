@@ -89,3 +89,8 @@ export interface SearchData {
   pagina: number;
   porPagina: number;
 }
+
+export interface StopOptions {
+  display: string,
+  value: string
+}
