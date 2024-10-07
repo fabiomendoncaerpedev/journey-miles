@@ -1,6 +1,6 @@
 <div class="busca-page">
   <app-banner
-    src="assets/imagens/banner-busca.png"
+    src="../../../assets/imagens/banner-busca.png"
     alt=""
   />
   <app-container>
@@ -8,6 +8,11 @@
       (do-search)="find($event)">
     </app-form-search>
     <section class="conteudo">
+      <aside class="filtros-adicionais">
+        <app-complementary-filters
+          (do-search)="find($event)">
+        </app-complementary-filters>
+      </aside>
       <div class="passagens">
         <app-ticket *ngFor="let ticket of tickets" [ticket]="ticket"></app-ticket>
       </div>

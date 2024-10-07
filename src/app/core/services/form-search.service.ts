@@ -28,6 +28,7 @@ export class FormSearchService {
       babies: new FormControl(0),
       arrivalDate,
       departureDate: new FormControl(null, [Validators.required]),
+      connections: new FormControl(null)
     })
 
     oneWayTicket.valueChanges.subscribe((oneWayTicket) => {
@@ -96,9 +97,12 @@ export class FormSearchService {
     };
 
     const arrivalDateControl = this.getControl<Date>('arrivalDate');
-
     if (arrivalDateControl.value)
       searchData.dataVolta = arrivalDateControl.value.toString();
+
+    const connectionsControl = this.getControl<number>('connections');
+    if (connectionsControl.value)
+      searchData.conexoes = connectionsControl.value;
 
     return searchData;
   }
