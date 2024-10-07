@@ -49,10 +49,11 @@ import { UfService } from './core/services/uf.service';
 import { SearchComponent } from './pages/search/search.component';
 import { TicketsService } from './core/services/tickets.service';
 import { TicketComponent } from './shared/ticket/ticket.component';
-import { CompaniesComponent } from './shared/form-search/complementary-filters/companies/companies.component';
+import { AirlinesComponent } from './shared/form-search/complementary-filters/airlines/airlines.component';
 import { LabelComponent } from './shared/form-search/complementary-filters/label/label.component';
 import { PricesComponent } from './shared/form-search/complementary-filters/prices/prices.component';
 import { StopsComponent } from './shared/form-search/complementary-filters/stops/stops.component';
+import { AirlineService } from './core/services/airline.service';
 
 @NgModule({
   declarations: [
@@ -75,7 +76,7 @@ import { StopsComponent } from './shared/form-search/complementary-filters/stops
     PerfilComponent,
     SearchComponent,
     TicketComponent,
-    CompaniesComponent,
+    AirlinesComponent,
     LabelComponent,
     PricesComponent,
     StopsComponent,
@@ -113,6 +114,7 @@ import { StopsComponent } from './shared/form-search/complementary-filters/stops
     TokenService,
     UfService,
     TicketsService,
+    AirlineService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthenticationInterceptor,

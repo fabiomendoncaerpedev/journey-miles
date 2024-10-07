@@ -1,0 +1,14 @@
+<section class="paradas">
+  <app-label texto="Companhias" />
+  <div class="checkbox-group">
+    <p *ngFor="let opcao of airlines" >
+      <mat-checkbox
+        color="primary"
+        [value]="opcao.id"
+        (change)="alternateAirline(opcao, $event.checked)"
+        [checked]="selectedAirline(opcao)">
+        {{opcao.nome}}
+      </mat-checkbox>
+    </p>
+  </div>
+</section>

@@ -2,8 +2,13 @@
   <app-label texto="Paradas" />
   <div class="checkbox-group">
     <p *ngFor="let option of options">
-      <mat-checkbox color="primary">
-        {{ option.display }}
+      <mat-checkbox
+        [value]="option.value"
+        (change)="alternateStop(option, $event.checked)"
+        [checked]="selectedStop(option)"
+        [disabled]="addStop(option)"
+        [indeterminate]="addStop(option)"
+        color="primary">{{ option.display }}
       </mat-checkbox>
     </p>
   </div>

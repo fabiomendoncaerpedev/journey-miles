@@ -28,7 +28,8 @@ export class FormSearchService {
       babies: new FormControl(0),
       arrivalDate,
       departureDate: new FormControl(null, [Validators.required]),
-      connections: new FormControl(null)
+      connections: new FormControl(null),
+      airlines: new FormControl(null)
     })
 
     oneWayTicket.valueChanges.subscribe((oneWayTicket) => {

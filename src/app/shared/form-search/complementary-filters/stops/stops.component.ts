@@ -44,4 +44,30 @@ export class StopsComponent implements OnInit {
       }
     )
   }
+
+  selectedStop(option: StopOptions): boolean {
+    return this.selectedOptions === option;
+  }
+
+  alternateStop(option: StopOptions, checked: boolean) {
+    if(!checked){
+      this.selectedOptions = null;
+      this.formSearchService.getFormSearch().patchValue({
+        conexoes: null
+      })
+      return
+    }
+    this.selectedOptions = option
+    this.formSearchService.getFormSearch().patchValue({
+      conexoes: Number(option.value)
+    })
+  }
+
+  addStop(option: StopOptions) {
+    if (!this.selectedOptions) {
+      return false;
+    }
+
+    return this.selectedOptions.value > option.value
+  }
 }
