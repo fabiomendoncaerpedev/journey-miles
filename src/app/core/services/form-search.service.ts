@@ -8,7 +8,6 @@ import { SearchData } from '../types/types';
 
 @Injectable()
 export class FormSearchService {
-
   private formSearch: FormGroup;
 
   constructor(
@@ -29,7 +28,9 @@ export class FormSearchService {
       arrivalDate,
       departureDate: new FormControl(null, [Validators.required]),
       connections: new FormControl(null),
-      airlines: new FormControl(null)
+      airlines: new FormControl(null),
+      minPrice: new FormControl(null),
+      maxPrice: new FormControl(null)
     })
 
     oneWayTicket.valueChanges.subscribe((oneWayTicket) => {
@@ -104,6 +105,14 @@ export class FormSearchService {
     const connectionsControl = this.getControl<number>('connections');
     if (connectionsControl.value)
       searchData.conexoes = connectionsControl.value;
+
+    const minPriceControl = this.getControl<number>('minPrice');
+    if (minPriceControl.value)
+      searchData.precoMin = minPriceControl.value
+
+    const maxPriceControl = this.getControl<number>('maxPrice');
+    if (maxPriceControl.value)
+      searchData.precoMax = maxPriceControl.value
 
     return searchData;
   }

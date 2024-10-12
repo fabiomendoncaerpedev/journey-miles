@@ -11,7 +11,7 @@ export class ComplementaryFiltersComponent {
   @Output('do-search') doSearch: EventEmitter<SearchData> = new EventEmitter();
 
   constructor(
-    private formSearchService: FormSearchService
+    public formSearchService: FormSearchService
   ) {}
 
   find() {

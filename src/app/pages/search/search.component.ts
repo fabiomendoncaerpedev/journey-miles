@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { take } from 'rxjs';
 import { SearchData, Ticket } from 'src/app/core/types/types';
 import { FormSearchService } from './../../core/services/form-search.service';
 import { TicketsService } from './../../core/services/tickets.service';
@@ -17,11 +18,11 @@ export class SearchComponent implements OnInit{
   ) {}
 
   ngOnInit(): void {
-    const defaultSearch = {
-      data: new Date().toISOString,
+    const defaultSearch: SearchData = {
+      dataIda: new Date().toISOString(),
       pagina: 1,
       porPagina: 25,
-      somenteId: false,
+      somenteIda: false,
       passageirosAdultos: 1,
       tipo: 'Executiva'
     };
@@ -30,9 +31,15 @@ export class SearchComponent implements OnInit{
       ? this.formSearchService.getSearchData()
       : defaultSearch;
 
-    this.ticketsService.getTickets(search).subscribe({
+    this.ticketsService.getTickets(search)
+    .pipe(take(1))
+    .subscribe({
       next: (response) => {
         this.tickets = response.resultado;
+        this.formSearchService.getFormSearch().patchValue({
+          minPrice: response.precoMin,
+          maxPrice: response.precoMax
+        })
       }
     })
   }

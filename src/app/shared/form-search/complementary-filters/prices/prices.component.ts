@@ -1,4 +1,7 @@
+import { FormControl } from '@angular/forms';
 import { Component } from '@angular/core';
+import { FormSearchService } from './../../../../core/services/form-search.service';
+import { TicketsService } from './../../../../core/services/tickets.service';
 
 @Component({
   selector: 'app-prices',
@@ -6,6 +9,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./prices.component.scss']
 })
 export class PricesComponent {
-  minPrice?: number = 0;
-  maxPrice?: number = 5000
+  minPrice: FormControl<number>;
+  maxPrice: FormControl<number>;
+
+  constructor(
+    public ticketsService: TicketsService,
+    private formSearchService: FormSearchService
+  ) {
+    this.minPrice = this.formSearchService.getControl<number>('minPrice');
+    this.maxPrice = this.formSearchService.getControl<number>('maxPrice');
+  }
 }
