@@ -3,7 +3,7 @@ import { FormGroup } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/core/types/types';
 import { FormService } from './../../core/services/form.service';
-import { UserService } from 'src/app/core/services/user.service';
+import { UserService } from 'src/app/authentication/services/user.service';
 
 @Component({
   selector: 'app-perfil',

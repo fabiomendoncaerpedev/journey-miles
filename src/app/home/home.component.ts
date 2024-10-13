@@ -1,9 +1,9 @@
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { SaleService } from './../../core/services/sale.service';
 import { Sale, Testimony } from 'src/app/core/types/types';
-import { TestimonyService } from './../../core/services/testimony.service';
+import { TestimonyService } from './services/testimony.service';
+import { SaleService } from '../core/services/sale.service';
 
 @Component({
   selector: 'app-home',

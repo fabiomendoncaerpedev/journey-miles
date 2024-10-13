@@ -2,8 +2,8 @@ import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, tap } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { AuthResponse } from '../types/types';
-import { UserService } from 'src/app/core/services/user.service';
+import { AuthResponse } from '../../core/types/types';
+import { UserService } from 'src/app/authentication/services/user.service';
 
 @Injectable()
 export class AuthenticationService {

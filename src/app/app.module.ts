@@ -6,28 +6,23 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { SaleService } from './core/services/sale.service';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './pages/login/login.component';
-import { RegisterComponent } from './pages/register/register.component';
-import { PerfilComponent } from './pages/perfil/perfil.component';
-import { AuthenticationInterceptor } from './core/interceptors/authentication.interceptor';
-import { AuthenticationService } from './core/services/authentication.service';
+import { AuthenticationInterceptor } from './authentication/interceptors/authentication.interceptor';
+import { AuthenticationService } from './authentication/services/authentication.service';
 import { FormSearchService } from './core/services/form-search.service';
 import { FormService } from './core/services/form.service';
-import { TestimonyService } from './core/services/testimony.service';
-import { TokenService } from './core/services/token.service';
+import { TokenService } from './authentication/services/token.service';
 import { UfService } from './core/services/uf.service';
-import { TicketsService } from './core/services/tickets.service';
 import { AirlineService } from './core/services/airline.service';
 import { SharedModule } from './shared/shared.module';
 import { MaterialModule } from './core/material/material.module';
-import { HomeModule } from './pages/home/home.module';
+import { AuthenticationModule } from './authentication/authentication.module';
+import { HomeModule } from './home/home.module';
+import { TestimonyService } from './home/services/testimony.service';
+import { TicketsService } from './home/services/tickets.service';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    PerfilComponent,
-    RegisterComponent,
-    LoginComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +31,8 @@ import { HomeModule } from './pages/home/home.module';
     BrowserAnimationsModule,
     MaterialModule,
     ReactiveFormsModule,
-    HomeModule
+    HomeModule,
+    AuthenticationModule
   ],
   providers: [
     SaleService,

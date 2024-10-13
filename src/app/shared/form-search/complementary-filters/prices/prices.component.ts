@@ -1,7 +1,7 @@
 import { FormControl } from '@angular/forms';
 import { Component } from '@angular/core';
 import { FormSearchService } from './../../../../core/services/form-search.service';
-import { TicketsService } from './../../../../core/services/tickets.service';
+import { TicketsService } from 'src/app/home/services/tickets.service';
 
 @Component({
   selector: 'app-prices',

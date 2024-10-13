@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 import { jwtDecode } from 'jwt-decode';
-import { User } from '../types/types';
+import { User } from '../../core/types/types';
 import { TokenService } from './token.service';
 import { environment } from 'src/environments/environment';
 

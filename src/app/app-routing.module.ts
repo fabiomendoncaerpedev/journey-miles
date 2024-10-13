@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './pages/home/home.component';
-import { LoginComponent } from './pages/login/login.component';
-import { RegisterComponent } from './pages/register/register.component';
-import { PerfilComponent } from './pages/perfil/perfil.component';
-import { authGuard } from './core/guards/auth.guard';
+import { LoginComponent } from './authentication/login/login.component';
+import { RegisterComponent } from './authentication/register/register.component';
+import { authGuard } from './authentication/guards/auth.guard';
 import { SearchComponent } from './pages/search/search.component';
+import { HomeComponent } from './home/home.component';
+import { PerfilComponent } from './authentication/perfil/perfil.component';
 
 const routes: Routes = [
   {
