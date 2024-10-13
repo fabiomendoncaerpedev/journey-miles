@@ -10,7 +10,7 @@
       <button mat-button>Sobre</button>
       <ng-container
         *ngIf="user$ | async as userInfo, else login">
-        <a routerLink="/perfil">
+        <a routerLink="auth/perfil">
           <mat-icon
             aria-hidden="false"
             aria-label="User Icon"
@@ -26,11 +26,11 @@
         <button
           mat-raised-button
           color="primary"
-          routerLink="/register">CADASTRE-SE
+          routerLink="auth/register">CADASTRE-SE
         </button>
         <button
           mat-stroked-button
-          routerLink="/login">LOGIN
+          routerLink="auth/login">LOGIN
         </button>
       </ng-template>
     </div>

@@ -1,6 +1,8 @@
 import { NgModule } from "@angular/core";
+import { RouterModule } from "@angular/router";
 import { ReactiveFormsModule } from "@angular/forms";
 import { CommonModule } from "@angular/common";
+
 import { BannerComponent } from "./banner/banner.component";
 import { CardComponent } from "./card/card.component";
 import { ContainerComponent } from "./container/container.component";
@@ -29,7 +31,8 @@ import { MaterialModule } from "../core/material/material.module";
   imports: [
     CommonModule,
     MaterialModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule
   ],
   exports: [
     HeaderComponent,

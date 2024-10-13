@@ -1,5 +1,6 @@
 import { inject } from "@angular/core"
 import { Router } from "@angular/router";
+
 import { UserService } from "../services/user.service"
 
 export const authGuard = () => {
@@ -9,7 +10,7 @@ export const authGuard = () => {
   if (userService.isLogged())
     return true
   else {
-    router.navigate(['/login']);
+    router.navigate(['auth/login']);
     return false;
   }
 }
