@@ -1,9 +1,8 @@
 import { NgModule } from "@angular/core";
+import { ReactiveFormsModule } from "@angular/forms";
 import { CommonModule } from "@angular/common";
 import { SearchComponent } from "../pages/search/search.component";
 import { BannerComponent } from "./banner/banner.component";
-import { CardSearchComponent } from "./card-search/card-search.component";
-import { CardTestimonyComponent } from "./card-testimony/card-testimony.component";
 import { CardComponent } from "./card/card.component";
 import { ContainerComponent } from "./container/container.component";
 import { CounterComponent } from "./counter/counter.component";
@@ -20,7 +19,6 @@ import { HeaderComponent } from "./header/header.component";
 import { ModalComponent } from "./modal/modal.component";
 import { TicketComponent } from "./ticket/ticket.component";
 import { MaterialModule } from "../core/material/material.module";
-import { ReactiveFormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -29,8 +27,6 @@ import { ReactiveFormsModule } from "@angular/forms";
     ContainerComponent,
     FooterComponent,
     CardComponent,
-    CardSearchComponent,
-    CardTestimonyComponent,
     FormSearchComponent,
     ModalComponent,
     CounterComponent,
@@ -55,8 +51,6 @@ import { ReactiveFormsModule } from "@angular/forms";
     ContainerComponent,
     FooterComponent,
     CardComponent,
-    CardSearchComponent,
-    CardTestimonyComponent,
     FormSearchComponent,
     ModalComponent,
     CounterComponent,

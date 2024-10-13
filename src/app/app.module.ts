@@ -2,11 +2,9 @@ import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
-import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { SaleService } from './core/services/sale.service';
-import { HomeComponent } from './pages/home/home.component';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
@@ -22,14 +20,14 @@ import { TicketsService } from './core/services/tickets.service';
 import { AirlineService } from './core/services/airline.service';
 import { SharedModule } from './shared/shared.module';
 import { MaterialModule } from './core/material/material.module';
+import { HomeModule } from './pages/home/home.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     PerfilComponent,
     RegisterComponent,
-    LoginComponent,
-    HomeComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +35,8 @@ import { MaterialModule } from './core/material/material.module';
     SharedModule,
     BrowserAnimationsModule,
     MaterialModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HomeModule
   ],
   providers: [
     SaleService,
