@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Airline } from 'src/app/core/types/types';
 import { FormSearchService } from '../../../../core/services/form-search.service';
-import { AirlineService } from '../../../../core/services/airline.service';
+import { AirlineService } from '../../../services/airline.service';
 
 @Component({
   selector: 'app-airlines',

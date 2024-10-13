@@ -5,6 +5,7 @@ import { CardSearchComponent } from "src/app/shared/card-search/card-search.comp
 import { CardTestimonyComponent } from "src/app/shared/card-testimony/card-testimony.component";
 import { MaterialModule } from "src/app/core/material/material.module";
 import { SharedModule } from "src/app/shared/shared.module";
+import { SearchModule } from "../search/search.module";
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { SharedModule } from "src/app/shared/shared.module";
   imports: [
     CommonModule,
     MaterialModule,
-    SharedModule
+    SharedModule,
+    SearchModule
   ],
   exports: [
     HomeComponent,

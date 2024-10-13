@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Sale, Testimony } from 'src/app/core/types/types';
 import { TestimonyService } from './services/testimony.service';
-import { SaleService } from '../core/services/sale.service';
+import { SaleService } from '../search/services/sale.service';
 
 @Component({
   selector: 'app-home',

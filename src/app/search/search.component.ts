@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { take } from 'rxjs';
 import { SearchData, Ticket } from 'src/app/core/types/types';
-import { FormSearchService } from './../../core/services/form-search.service';
 import { TicketsService } from 'src/app/home/services/tickets.service';
+import { FormSearchService } from '../core/services/form-search.service';
 
 @Component({
   selector: 'app-search',
