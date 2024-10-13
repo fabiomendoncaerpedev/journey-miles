@@ -6,6 +6,7 @@ import { CardTestimonyComponent } from "src/app/shared/card-testimony/card-testi
 import { MaterialModule } from "src/app/core/material/material.module";
 import { SharedModule } from "src/app/shared/shared.module";
 import { SearchModule } from "../search/search.module";
+import { HomeRoutingModule } from "./home-routing.module";
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { SearchModule } from "../search/search.module";
     CommonModule,
     MaterialModule,
     SharedModule,
-    SearchModule
+    SearchModule,
+    HomeRoutingModule
   ],
   exports: [
     HomeComponent,

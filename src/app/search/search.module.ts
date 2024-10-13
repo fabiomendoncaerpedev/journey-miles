@@ -1,4 +1,7 @@
+import { ReactiveFormsModule } from "@angular/forms";
+import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
+
 import { FormSearchComponent } from "./form-search/form-search.component";
 import { SearchComponent } from "./search.component";
 import { ComplementaryFiltersComponent } from "./form-search/complementary-filters/complementary-filters.component";
@@ -8,8 +11,7 @@ import { LabelComponent } from "./form-search/complementary-filters/label/label.
 import { PricesComponent } from "./form-search/complementary-filters/prices/prices.component";
 import { StopsComponent } from "./form-search/complementary-filters/stops/stops.component";
 import { MaterialModule } from "../core/material/material.module";
-import { ReactiveFormsModule } from "@angular/forms";
-import { CommonModule } from "@angular/common";
+import { SearchRoutingModule } from "./search-routing.module";
 
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ import { CommonModule } from "@angular/common";
     CommonModule,
     SharedModule,
     MaterialModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SearchRoutingModule
   ],
   exports: [
     SearchComponent,

@@ -3,6 +3,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
+
 import { AppRoutingModule } from './app-routing.module';
 import { SaleService } from './search/services/sale.service';
 import { AppComponent } from './app.component';
@@ -15,10 +16,10 @@ import { UfService } from './core/services/uf.service';
 import { AirlineService } from './search/services/airline.service';
 import { SharedModule } from './shared/shared.module';
 import { MaterialModule } from './core/material/material.module';
-import { AuthenticationModule } from './authentication/authentication.module';
 import { HomeModule } from './home/home.module';
 import { TestimonyService } from './home/services/testimony.service';
 import { TicketsService } from './home/services/tickets.service';
+import { ErroModule } from './core/erro/erro.module';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,7 @@ import { TicketsService } from './home/services/tickets.service';
     MaterialModule,
     ReactiveFormsModule,
     HomeModule,
-    AuthenticationModule
+    ErroModule
   ],
   providers: [
     SaleService,
