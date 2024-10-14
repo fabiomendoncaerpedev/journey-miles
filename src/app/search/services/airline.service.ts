@@ -13,7 +13,7 @@ export class AirlineService {
     private http: HttpClient
   ) { }
 
-  list() : Observable<Array<Airline>> {
+  list(): Observable<Array<Airline>> {
     return this.http.get<Array<Airline>>(`${this.API}/companhias`);
   }
 }

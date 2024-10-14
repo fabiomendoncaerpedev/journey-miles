@@ -42,7 +42,7 @@ export class StopsComponent implements OnInit {
         if(!value)
           this.selectedOptions = null;
       }
-    )
+    );
   }
 
   selectedStop(option: StopOptions): boolean {
@@ -54,13 +54,13 @@ export class StopsComponent implements OnInit {
       this.selectedOptions = null;
       this.formSearchService.getFormSearch().patchValue({
         conexoes: null
-      })
-      return
+      });
+      return;
     }
-    this.selectedOptions = option
+    this.selectedOptions = option;
     this.formSearchService.getFormSearch().patchValue({
       conexoes: Number(option.value)
-    })
+    });
   }
 
   addStop(option: StopOptions) {
@@ -68,6 +68,6 @@ export class StopsComponent implements OnInit {
       return false;
     }
 
-    return this.selectedOptions.value > option.value
+    return this.selectedOptions.value > option.value;
   }
 }

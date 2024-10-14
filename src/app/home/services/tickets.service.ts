@@ -6,8 +6,8 @@ import { environment } from 'src/environments/environment';
 
 @Injectable()
 export class TicketsService {
-  minPrice: number = 0;
-  maxPrice: number = 0;
+  minPrice = 0;
+  maxPrice = 0;
   private API = environment.apiURL;
 
   constructor(
@@ -35,8 +35,8 @@ export class TicketsService {
       ([key, value]) => {
         return !value
           ? ''
-          : `${key}=${value}`
+          : `${key}=${value}`;
       }
-    ).join('&')
+    ).join('&');
   }
 }

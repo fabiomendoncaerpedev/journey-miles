@@ -8,13 +8,13 @@
         <hr>
         <div class="origem-destino">
           <div class="grupo">
-            <label>Origem</label>
+            <mat-label>Origem</mat-label>
             <p class="box">
               {{ ticket.origem.nome }} ({{ ticket.origem.sigla }})
             </p>
           </div>
           <div class="grupo">
-            <label>Destino</label>
+            <mat-label>Destino</mat-label>
             <p class="box">
               {{ ticket.destino.nome }} ({{ ticket.destino.sigla }})
             </p>
@@ -23,13 +23,13 @@
         <hr>
         <div class="datas">
           <div class="grupo">
-            <label>Ida</label>
+            <mat-label>Ida</mat-label>
             <p class="box">
               {{ ticket.dataIda | date:'dd/MM' }}
             </p>
           </div>
           <div class="grupo" *ngIf="ticket.dataVolta">
-            <label>Volta</label>
+            <mat-label>Volta</mat-label>
             <p class="box">
               {{ ticket.dataVolta | date:'dd/MM' }}
             </p>

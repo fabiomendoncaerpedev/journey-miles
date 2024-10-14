@@ -30,7 +30,7 @@ export class UfService {
             id: uf.id,
             nome: uf.nome,
             sigla: uf.sigla
-          }
+          };
         })
       ),
       shareReplay(1),

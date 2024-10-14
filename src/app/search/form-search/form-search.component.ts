@@ -18,7 +18,7 @@ export class FormSearchComponent {
       const formSearchValue = this.formSearchService.getSearchData();
       this.doSearch.emit(formSearchValue);
     } else {
-      alert('form must be filled in')
+      alert('form must be filled in');
     }
   }
 
@@ -29,6 +29,6 @@ export class FormSearchComponent {
     this.formSearchService.getFormSearch().patchValue({
       origin: destiny,
       destiny: origin
-    })
+    });
   }
 }

@@ -28,6 +28,6 @@ export class HomeComponent implements OnInit {
 
 
   navigateToSearch(event: any) {
-    this.router.navigate(['/search'])
+    this.router.navigate(['/search']);
   }
 }

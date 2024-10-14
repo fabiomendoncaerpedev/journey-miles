@@ -11,10 +11,10 @@ import { UfService } from '../../core/services/uf.service';
   styleUrls: ['./dropdown-uf.component.scss']
 })
 export class DropdownUfComponent implements OnInit {
-  @Input('label') label = '';
+  @Input() label = '';
   @Input('icon-prefix') iconPrefix = '';
-  @Input('placeholder') placeholder = '';
-  @Input('control') control!: FormControl;
+  @Input() placeholder = '';
+  @Input() control!: FormControl;
 
   filteredOptions$!: Observable<Array<UF>>;
   ufList: Array<UF> = [];
@@ -30,7 +30,7 @@ export class DropdownUfComponent implements OnInit {
       map((value) => {
         const rightValue = typeof value === 'string' ? value : value?.nome;
 
-        return this.ufList.filter(uf => uf.nome.toLowerCase().includes(rightValue.toLowerCase()))
+        return this.ufList.filter(uf => uf.nome.toLowerCase().includes(rightValue.toLowerCase()));
       })
     );
   }

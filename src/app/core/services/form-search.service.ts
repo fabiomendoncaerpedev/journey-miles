@@ -31,7 +31,7 @@ export class FormSearchService {
       airlines: new FormControl(null),
       minPrice: new FormControl(null),
       maxPrice: new FormControl(null)
-    })
+    });
 
     oneWayTicket.valueChanges.subscribe((oneWayTicket) => {
       if (oneWayTicket) {
@@ -39,7 +39,7 @@ export class FormSearchService {
         arrivalDate.setValidators(null);
       } else {
         arrivalDate.enable();
-        arrivalDate.setValidators([Validators.required])
+        arrivalDate.setValidators([Validators.required]);
       }
 
       arrivalDate.updateValueAndValidity();
@@ -57,7 +57,7 @@ export class FormSearchService {
     passengers.forEach((passenger, index, arr) => {
       const total = this.formSearch.get(passenger[0])?.value;
 
-      description += total ? `${description ? ', ' : ''}${total} ${passenger[1]}${total > 1 ? 's' : ''}`: ''
+      description += total ? `${description ? ', ' : ''}${total} ${passenger[1]}${total > 1 ? 's' : ''}`: '';
     });
 
     return description ? description : 'Ainda não foram selecionados passageiros';
@@ -108,11 +108,11 @@ export class FormSearchService {
 
     const minPriceControl = this.getControl<number>('minPrice');
     if (minPriceControl.value)
-      searchData.precoMin = minPriceControl.value
+      searchData.precoMin = minPriceControl.value;
 
     const maxPriceControl = this.getControl<number>('maxPrice');
     if (maxPriceControl.value)
-      searchData.precoMax = maxPriceControl.value
+      searchData.precoMax = maxPriceControl.value;
 
     return searchData;
   }
@@ -120,13 +120,13 @@ export class FormSearchService {
   openDialog() {
     this.dialog.open(ModalComponent, {
       width: '50%'
-    })
+    });
   }
 
   alterType(event: MatChipSelectionChange, type: string) {
     if (event.selected) {
       this.formSearch.patchValue({ type });
-      console.log('ticket type ->', type)
+      console.log('ticket type ->', type);
     }
   }
 

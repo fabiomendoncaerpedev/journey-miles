@@ -10,11 +10,11 @@ import { FormValidations } from '../validators/form-validations';
   styleUrls: ['./form-base.component.scss']
 })
 export class FormBaseComponent implements OnInit {
-  @Input('is-perfil-component') isPerfilComponent: boolean = false;
-  @Input('title') title: string = 'Crie sua Conta';
-  @Input('buttonText') buttonText = 'CADASTRAR';
-  @Output('click-action') clickAction: EventEmitter<any> = new EventEmitter();
-  @Output('logout') logout: EventEmitter<any> = new EventEmitter();
+  @Input('is-perfil-component') isPerfilComponent = false;
+  @Input() title = 'Crie sua Conta';
+  @Input() buttonText = 'CADASTRAR';
+  @Output('click-action') clickAction: EventEmitter<void> = new EventEmitter();
+  @Output() logout: EventEmitter<void> = new EventEmitter();
 
   formBase!: FormGroup;
   stateControl = new FormControl<UF | null>(null, Validators.required);

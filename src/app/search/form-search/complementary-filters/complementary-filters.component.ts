@@ -22,7 +22,7 @@ export class ComplementaryFiltersComponent {
         left: 0,
         behavior: 'smooth'
       });
-      return
+      return;
     }
 
     this.doSearch.emit(this.formSearchService.getSearchData());

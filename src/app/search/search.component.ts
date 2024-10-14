@@ -39,9 +39,9 @@ export class SearchComponent implements OnInit{
         this.formSearchService.getFormSearch().patchValue({
           minPrice: response.precoMin,
           maxPrice: response.precoMax
-        })
+        });
       }
-    })
+    });
   }
 
   find(event: SearchData) {
@@ -49,6 +49,6 @@ export class SearchComponent implements OnInit{
       next: (response) => {
         this.tickets = response.resultado;
       }
-    })
+    });
   }
 }

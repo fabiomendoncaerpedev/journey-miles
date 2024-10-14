@@ -1,5 +1,5 @@
 import { Router } from '@angular/router';
-import { FormGroup } from '@angular/forms';
+import { FormGroup, UntypedFormGroup } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/core/types/types';
 import { FormService } from './../../core/services/form.service';
@@ -13,7 +13,7 @@ import { UserService } from 'src/app/authentication/services/user.service';
 export class PerfilComponent implements OnInit {
   name = '';
   user!: User;
-  form!: FormGroup<any> | null;
+  form!: UntypedFormGroup | null;
 
   constructor(
     private userService: UserService,
@@ -29,7 +29,7 @@ export class PerfilComponent implements OnInit {
 
         this.loadForm();
       }
-    })
+    });
   }
 
   updateInfoUser() {
@@ -43,14 +43,14 @@ export class PerfilComponent implements OnInit {
       estado: this.form?.value.state,
       email: this.form?.value.email,
       senha: this.form?.value.password
-    }
+    };
 
     this.userService.editRegister(updatedData).subscribe({
-      next: (response) => {
-        alert('updated successfuly')
-        this.router.navigate(['/'])
+      next: () => {
+        alert('updated successfuly');
+        this.router.navigate(['/']);
       }
-    })
+    });
   }
 
   logout() {

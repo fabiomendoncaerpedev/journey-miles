@@ -12,6 +12,6 @@ export class TicketComponent {
   get textoIdaVolta(){
     return !this.ticket.dataVolta
       ? "Somente ida"
-      : "Ida e volta"
+      : "Ida e volta";
   }
 }

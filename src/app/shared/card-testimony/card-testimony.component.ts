@@ -7,5 +7,5 @@ import { Testimony } from 'src/app/core/types/types';
   styleUrls: ['./card-testimony.component.scss']
 })
 export class CardTestimonyComponent {
-  @Input('testimony') testimony!: Testimony;
+  @Input() testimony!: Testimony;
 }

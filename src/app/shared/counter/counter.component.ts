@@ -7,11 +7,11 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['./counter.component.scss']
 })
 export class CounterComponent {
-  @Input('title') title = '';
-  @Input('obs') obs = '';
-  @Input('control') control!: FormControl;
+  @Input() title = '';
+  @Input() obs = '';
+  @Input() control!: FormControl;
 
-  increase() { this.control.setValue(this.control.value + 1) }
-  decrease() { this.control.setValue(this.control.value - 1) }
+  increase() { this.control.setValue(this.control.value + 1); }
+  decrease() { this.control.setValue(this.control.value - 1); }
 
 }

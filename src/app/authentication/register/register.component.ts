@@ -29,11 +29,11 @@ export class RegisterComponent {
     };
 
     this.userService.register(newUserData).subscribe({
-      next: (response) => {
+      next: () => {
         console.log('registered successfuly');
 
         this.router.navigate(['auth/login']);
       }
-    })
+    });
   }
 }

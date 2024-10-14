@@ -5,7 +5,7 @@ const KEY = 'token';
 @Injectable()
 export class TokenService {
 
-  constructor() { }
+  constructor() {}
 
   saveToken(token: string) {
     localStorage.setItem(KEY, token);

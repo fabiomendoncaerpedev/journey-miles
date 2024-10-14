@@ -8,8 +8,8 @@ export class FormValidations {
 
       return fieldValue != otherFieldValue
         ? { equalTo: true }
-        : null
-    }
+        : null;
+    };
   }
 
   static required(isPerfilComponent: boolean): ValidatorFn {
@@ -18,7 +18,7 @@ export class FormValidations {
 
       return !isPerfilComponent && !fieldValue
         ? { required: true }
-        : null
-    }
+        : null;
+    };
   }
 }
