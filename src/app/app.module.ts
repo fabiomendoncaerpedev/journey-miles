@@ -21,6 +21,7 @@ import { TestimonyService } from './home/services/testimony.service';
 import { TicketsService } from './home/services/tickets.service';
 import { ErroModule } from './core/erro/erro.module';
 import { ErrosInterceptor } from './core/erro/erros.interceptor';
+import { MessageService } from './core/services/message.service';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { ErrosInterceptor } from './core/erro/erros.interceptor';
     UfService,
     TicketsService,
     AirlineService,
+    MessageService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthenticationInterceptor,
